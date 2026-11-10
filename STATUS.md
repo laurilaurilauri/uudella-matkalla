@@ -7,21 +7,13 @@ Background and ground rules are in CLAUDE.md. Lauri makes all commits himself.
 
 ## Last completed
 
-- ~~Step 1, tidy-up: added .gitignore, fixed three image names (Lentokoulu, Unimaailma, Frankenstein), removed five duplicate image files.~~
+- ~~Commit 1, content and build script: the gallery and the four stories as Markdown, the story page template, build.py with a dry-run mode, the two markers in index.html, and a build guide in README.md. A dry run showed the generated pages match the current ones, apart from spacing and two explanatory comments.~~
 
 ## Next: write content in Markdown, generate the HTML
 
 The idea: all text and the list of drawings live in Markdown files written in Typora. A small Python script turns them into the same web pages the site has now. The Markdown files contain only content; how things look is decided by the CSS and the page template.
 
-**Commit 1 – content and build script** (the site itself does not change yet)
-
-- [x] Front page content as Markdown (content/gallery.md)
-- [x] The four stories as Markdown (content/stories/)
-- [x] A story page template (templates/story.html)
-- [x] The build script (build.py), with a "dry run" mode that only shows what would change
-- [x] Two invisible markers in index.html showing where the gallery starts and ends
-- [x] Short guide to the build script in README.md
-- Dry run checked: the generated pages match the current ones, apart from spacing and two new explanatory comments.
+**Note:** the site still runs on the old hand-made HTML. The build has only been run as a dry run, so editing the Markdown files has no effect yet. That changes with commit 2.
 
 **Commit 2 – regenerate the pages**
 
@@ -56,4 +48,4 @@ The idea: all text and the list of drawings live in Markdown files written in Ty
 ## Good to know
 
 - The letters ä and ö can be stored in two different ways inside a file name. A Mac treats both as the same name, and git on a Mac does too, so a git command can hit the wrong file. Check the result carefully when working with such file names.
-- **Typora theme "Matkalla":** shows images at half size while writing. It's based on Typora's default GitHub theme, so it's easy to tell apart from the theme used for other documents. Choose it from the Themes menu when working on the site. The file is matkalla.css in Typora's themes folder (Typora → Preferences → Appearance → Open Theme Folder). It's outside the project, so git doesn't track it.
+- **Typora theme "Matkalla":** shows images at half size while writing. It's based on Typora's default GitHub theme, so it's easy to tell apart from the theme used for other documents. Choose it from the Themes menu when working on the site. The file is matkalla.css in Typora's themes folder (Typora → Preferences → Appearance → Open Theme Folder). It's outside the project, so git doesn't track it. It didn't seem to work on the first try; still to be checked (first step: fully quit Typora with Cmd+Q and reopen).
