@@ -14,6 +14,7 @@ Lauri's hand-built online gallery of drawings, mostly from travels in South Amer
 - The site's look and behaviour must stay identical unless Lauri explicitly asks for a design change.
 - Keep it simple enough that Lauri (some coding knowledge, not a web developer) can always understand how it works. Explain changes in plain terms.
 - Show proposed changes before applying them. One step at a time, one commit per step.
+- Lauri always makes the commits himself. Never run `git commit` or `git push`; prepare the changes and leave them for Lauri to review and commit.
 - File names contain ä/ö; links must match exactly. GitHub Pages is case-sensitive (`.JPEG` ≠ `.jpeg`), macOS is not.
 
 ## Current structure
@@ -61,10 +62,9 @@ A draft `build.py` exists (tested on a mock site). It still expects `gallery.md`
 ## Step plan
 
 1. **Tidy-up (first commit):** add `.gitignore` (`.DS_Store`); fix mismatched alt texts:
-   - `lentokoulu.JPEG` has alt "Muuttolinnut"
-   - `unimaailma.JPEG` has alt "Kaukana kotoa"
-   - Frankenstein tile has alt "Frank"
-   (Ask Lauri for the correct titles.)
+   `lentokoulu.JPEG` → "Lentokoulu", `unimaailma.JPEG` → "Unimaailma",
+   Frankenstein tile → "Frankenstein"; remove 5 duplicate images whose ä is
+   stored in decomposed (NFD) form (byte-identical to the NFC files the site uses).
 2. **Content/design split:** add `content/`, `templates/story.html`, markers in `index.html`, updated `build.py`; migrate the current gallery and 4 stories to Markdown.
 3. **Identical-output check:** build, `diff -w` against the current HTML (index.html has uneven indentation, so compare ignoring whitespace), click through locally (`python3 -m http.server`).
 4. **Build warnings and unused files:** warn on sections with other than 2 or 3 works (mobile layout), list unused images/audio. About 11 images and 6 audio drafts are currently unused; decide whether to move them out of the repo.
