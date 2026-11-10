@@ -23,8 +23,9 @@ The idea: all text and the list of drawings live in Markdown files written in Ty
 
 **Commit 3 – instructions**
 
-- [ ] Replace the old "Adding a new story" section in README.md with a guide for the new way
+- [x] README.md rewritten for the new structure (done early, together with commit 1)
 - [ ] Update the structure description in CLAUDE.md
+- [ ] Decide whether the README links should point to this repo instead of the original one
 
 ## Later
 
