@@ -15,6 +15,8 @@ Lauri's hand-built online gallery of drawings, mostly from travels in South Amer
 - Keep it simple enough that Lauri (some coding knowledge, not a web developer) can always understand how it works. Explain changes in plain terms.
 - Show proposed changes before applying them. One step at a time, one commit per step.
 - Lauri always makes the commits himself. Never run `git commit` or `git push`; prepare the changes and leave them for Lauri to review and commit.
+- Current progress, the plan and decisions are in STATUS.md. Read it at the start of a session and keep it updated as work progresses.
+- How to write STATUS.md: it is for Lauri to read first, so readability comes before completeness. Plain language, short sections, no clutter. Use inline `code` only when really necessary (e.g. a command to type); write file and folder names as plain text otherwise. Remove completed work, except the most recently completed step, which stays as ~~struck-through~~ text so it's clear where things left off. Record decisions briefly with the reason.
 - File names contain ä/ö; links must match exactly. GitHub Pages is case-sensitive (`.JPEG` ≠ `.jpeg`), macOS is not.
 
 ## Current structure
