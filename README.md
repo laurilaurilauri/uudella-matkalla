@@ -4,7 +4,7 @@
 
 Link: https://laurilaurilauri.github.io/matkalla/
 
-**Matkalla** ("On the way") is my small, hand-built online gallery of my drawings. This is the second version of the gallery.
+**Matkalla** ("On the way") is a small, hand-built online gallery of my drawings. This is the second version of the gallery.
 
 ---
 
