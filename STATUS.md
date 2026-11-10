@@ -15,12 +15,12 @@ The idea: all text and the list of drawings live in Markdown files written in Ty
 
 **Commit 1 – content and build script** (the site itself does not change yet)
 
-- [ ] Front page content as Markdown (content/gallery.md)
-- [ ] The four stories as Markdown (content/stories/)
-- [ ] A story page template (templates/story.html)
+- [x] Front page content as Markdown (content/gallery.md)
+- [x] The four stories as Markdown (content/stories/)
+- [x] A story page template (templates/story.html)
 - [ ] The build script (build.py), with a "dry run" mode that only shows what would change
 - [ ] Two invisible markers in index.html showing where the gallery starts and ends
-- Show Lauri the Markdown files and the template first, then the script.
+- Markdown files and template reviewed by Lauri. Next: the script.
 
 **Commit 2 – regenerate the pages**
 
@@ -55,3 +55,4 @@ The idea: all text and the list of drawings live in Markdown files written in Ty
 ## Good to know
 
 - The letters ä and ö can be stored in two different ways inside a file name. A Mac treats both as the same name, and git on a Mac does too, so a git command can hit the wrong file. Check the result carefully when working with such file names.
+- **Typora theme "Matkalla":** shows images at half size while writing. It's based on Typora's default GitHub theme, so it's easy to tell apart from the theme used for other documents. Choose it from the Themes menu when working on the site. The file is matkalla.css in Typora's themes folder (Typora → Preferences → Appearance → Open Theme Folder). It's outside the project, so git doesn't track it.
