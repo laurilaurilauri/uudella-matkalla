@@ -140,6 +140,92 @@ Some file names contain Finnish letters (ä, ö). Links in the HTML must match t
 
 ---
 
+## Building the site — `build.py`
+
+The text content and the list of drawings live in Markdown files in `content/`, and `build.py` turns them into the HTML pages. The Markdown files only say *what* is on the site; how it looks comes from the CSS and `templates/story.html`.
+
+| You edit | The build writes |
+|---|---|
+| `content/gallery.md` | `index.html`: only the part between `<!-- GALLERY:START -->` and `<!-- GALLERY:END -->`, plus the page title |
+| `content/stories/<name>.md` | `stories/<name>.html`, using the layout in `templates/story.html` |
+
+Generated pages should not be edited by hand: the next build overwrites the changes.
+
+### Using it
+
+Run these in the terminal, from the project folder:
+
+```bash
+python3 build.py --dry-run   # show what would change, write nothing
+python3 build.py             # build the site
+```
+
+1. Edit the Markdown files (e.g. in Typora).
+2. Run `python3 build.py --dry-run` to see what would change. Optional, but useful when unsure.
+3. Run `python3 build.py`.
+4. Check the result in the browser (see *Running locally* below), then commit both the `.md` files and the generated `.html` files.
+
+Nothing needs to be installed: the script only uses Python's standard library.
+
+### Safety checks
+
+Before writing anything, the build checks that every image, audio file and story mentioned in the Markdown files exists, with exactly the right spelling. This matters because macOS ignores differences in capital letters (`.JPEG` vs `.jpeg`) and in how ä/ö are stored, but GitHub Pages doesn't. A picture could work locally and be missing online.
+
+If something is wrong, the build lists every problem with the file and line number, and **writes nothing**. For example:
+
+```
+Stopped: 1 problem(s) found. Nothing was written.
+
+  - content/gallery.md, line 8: image not found: '../images/surullinen_kuu.jpeg' (the file is called 'surullinen_kuu.JPEG': check capital letters)
+```
+
+It also stops on things the story pages don't support yet (headings, lists, links or HTML in story text), so they can't end up looking out of place.
+
+**Warnings** don't stop the build. They point out things worth checking, such as a gallery section with other than 2 or 3 drawings (the mobile layout is made for those).
+
+### Markdown format
+
+`content/gallery.md`:
+
+```markdown
+---
+title: Matkalla
+subtitle: © LAURI PRUDANT 2026
+---
+
+## Section name
+
+![Name of drawing](../images/drawing.JPEG)
+[![Name of drawing](../images/other.JPEG)](stories/story-name.md)
+```
+
+- The top block sets the page title and the line under it.
+- `## ...` starts a section; a heading with no images is shown on its own (like *Coming soon...*).
+- Each image line is one drawing; the name in `[...]` becomes the alt text. Wrapping it in a link to a story's `.md` file makes the tile open that story.
+- Tile size is automatic: 3 drawings in a section → `large`, 2 → `huge`.
+
+`content/stories/<name>.md`:
+
+```markdown
+---
+title: Story title
+audio: ../../audio/soundscape.mp3
+---
+
+![Name of drawing](../../images/drawing.JPEG)
+
+First paragraph.
+
+Second paragraph, with *italic* and **bold**.
+```
+
+- `title` is used for the page heading and the browser tab.
+- The image line right below the top block is the story's drawing.
+- A blank line starts a new paragraph.
+- The file name becomes the page address: `tuulenpuuska.md` → `stories/tuulenpuuska.html`.
+
+---
+
 ## Running locally
 
 No installation is needed. Open `index.html` in a browser, or run a simple local server from the project folder:

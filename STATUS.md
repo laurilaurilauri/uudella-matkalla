@@ -18,9 +18,10 @@ The idea: all text and the list of drawings live in Markdown files written in Ty
 - [x] Front page content as Markdown (content/gallery.md)
 - [x] The four stories as Markdown (content/stories/)
 - [x] A story page template (templates/story.html)
-- [ ] The build script (build.py), with a "dry run" mode that only shows what would change
-- [ ] Two invisible markers in index.html showing where the gallery starts and ends
-- Markdown files and template reviewed by Lauri. Next: the script.
+- [x] The build script (build.py), with a "dry run" mode that only shows what would change
+- [x] Two invisible markers in index.html showing where the gallery starts and ends
+- [x] Short guide to the build script in README.md
+- Dry run checked: the generated pages match the current ones, apart from spacing and two new explanatory comments.
 
 **Commit 2 – regenerate the pages**
 
@@ -30,7 +31,7 @@ The idea: all text and the list of drawings live in Markdown files written in Ty
 
 **Commit 3 – instructions**
 
-- [ ] A "how to add a drawing or a story" guide in README.md
+- [ ] Replace the old "Adding a new story" section in README.md with a guide for the new way
 - [ ] Update the structure description in CLAUDE.md
 
 ## Later
