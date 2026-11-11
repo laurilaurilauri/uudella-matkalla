@@ -1,10 +1,10 @@
 # Matkalla
 
-*Kokeilu nettisivusta* — a portfolio by Lauri Prudant.
+A simple portfolio.
 
 Link: https://laurilaurilauri.github.io/uudella-matkalla/
 
-**Matkalla** is a small, hand-built online gallery of my drawings. This is the second version of the gallery.
+- **Matkalla** is a small, online gallery of my drawings. This is the second version of the website.
 
 ---
 
@@ -52,30 +52,61 @@ The look comes from `gallery.css` (front page), `style.css` (story pages) and `t
 
 ---
 
-## Adding a drawing
+## Adding a section and a story
 
-1. Image copied into `images/`.
-2. `content/gallery.md` opened and an image line added under the right `## Section` heading. In Typora this is done by dragging the image in and then typing the drawing's name in the square brackets:
-   
-   ```markdown
-   ![Name of drawing](../images/drawing.JPEG)
-   ```
-   For a new section, a `## Section name` heading added first.
-3. Then the script `build.py` is run and checked, then changes are committed.
+The following example shows how a new section with three drawings is added, with a story linked to one of them. The section is called made up section is called *Talvi* and the story is *Jäätynyt järvi*.
 
-## Adding a story
+**1. Add the files.** The photos go into `images/` and the soundscape into `audio/`:
 
-1. Image copied into `images/` and the soundscape into `audio/`.
-2. Existing story copied in `content/stories/` to a new name, e.g. `uusi-tarina.md`. The file name becomes the page address (`stories/uusi-tarina.html`).
-3. The title, the audio file, the image line and the text are changed. 
-4. In `content/gallery.md`, the drawing is linked to the story file:
-   ```markdown
-   [![Name of drawing](../images/drawing.JPEG)](stories/uusi-tarina.md)
-   ```
-   In Typora this is done by selecting the image, pressing Cmd+K and choosing the story file.
-5. Built and checked, then committed.
+```
+images/lumiukko.JPEG
+images/jäätynyt_järvi.JPEG
+images/pakkasaamu.JPEG
+audio/talvi.mp3
+```
 
-No HTML needs to be copied or edited.
+File names must be written the same way everywhere. Capital letters matter online,`.JPEG` and `.jpeg` are different files.
+
+**2. Write the story.** An existing file in `content/stories/` is copied to a new name, which becomes the page address: `jaatynyt-jarvi.md` → `stories/jaatynyt-jarvi.html`. Story file names are kept lowercase, without spaces or ä/ö.
+
+```markdown
+---
+title: Jäätynyt järvi
+audio: ../../audio/talvi.mp3
+---
+
+![Jäätynyt järvi](../../images/jäätynyt_järvi.JPEG)
+
+First paragraph.
+
+Second paragraph, with *italic* and **bold**.
+```
+
+**3. Add the section to the gallery.** In `content/gallery.md`, a `##` heading starts the section, and each image line is one drawing. The section's position in the file is its position on the page.
+
+```markdown
+## Talvi
+
+![Lumiukko](../images/lumiukko.JPEG)
+[![Jäätynyt järvi](../images/jäätynyt_järvi.JPEG)](stories/jaatynyt-jarvi.md)
+![Pakkasaamu](../images/pakkasaamu.JPEG)
+```
+
+The middle drawing links to the story file, so its tile opens the story (in Typora: select the image, Cmd+K, choose the file). A section should have 2 or 3 drawings, as the mobile layout is designed for those.
+
+**4. Build and check.**
+
+```bash
+python3 build.py --dry-run     # show what would change
+python3 build.py               # write the pages
+python3 -m http.server 8000    # preview at http://localhost:8000
+```
+
+If a file name is misspelled, the build stops, names the file and line, and writes nothing. In the preview, the new section, the story link, the music and the back link are checked, also in a narrow window for mobile.
+
+**5. Commit and push.** Images, audio, Markdown files and the generated HTML are committed together. The live site updates a minute or two after the push.
+
+No HTML is edited by hand.
 
 ---
 
