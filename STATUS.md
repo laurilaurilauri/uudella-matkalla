@@ -7,32 +7,28 @@ Background and ground rules are in CLAUDE.md. Lauri makes all commits himself.
 
 ## Last completed
 
-- ~~Commit 1, content and build script: the gallery and the four stories as Markdown, the story page template, build.py with a dry-run mode, the two markers in index.html, and a build guide in README.md. A dry run showed the generated pages match the current ones, apart from spacing and two explanatory comments.~~
+- ~~Front page styles and script moved out of index.html into their own files, gallery.css and gallery.js, like the story pages already use style.css and audio.js. index.html now holds only the page structure and the generated gallery. Looks and works exactly as before.~~
 
 ## Next: write content in Markdown, generate the HTML
 
 The idea: all text and the list of drawings live in Markdown files written in Typora. A small Python script turns them into the same web pages the site has now. The Markdown files contain only content; how things look is decided by the CSS and the page template.
 
-**Note:** from commit 2 on, the pages are generated. Edit the Markdown files in content, then run the build; don't edit the story pages or the gallery part of index.html by hand.
+**Note:** the pages are now generated. Edit the Markdown files in content, then run the build; don't edit the story pages or the gallery part of index.html by hand.
 
-**Commit 2 – regenerate the pages**
-
-- [x] Run the build script, which rewrites the gallery part of index.html and the four story pages
-- [x] Remove the old stories/template.html (replaced by the new template)
-- [x] Check that nothing changed except spacing (a second build reports "Everything is up to date")
-- [ ] Click through the site locally (Lauri)
-
-**Commit 3 – instructions**
+**Next commit – instructions**
 
 - [x] README.md rewritten for the new structure (done early, together with commit 1)
 - [x] Update the structure description in CLAUDE.md (done early: removed the outdated file tree and step plan, which STATUS.md now covers)
-- [ ] Decide whether the README links should point to this repo instead of the original one
+- [x] README links point to this repo and its new address (decided: they'll work once the site is live)
+- [x] README describes gallery.css and gallery.js
 
 ## Later
 
+- Publish this repo on GitHub Pages (switched on; the first try failed because of a GitHub outage – check that https://laurilaurilauri.github.io/uudella-matkalla/ works)
+- Write a first new story to try out the workflow
 - Change the page language setting from English to Finnish (own small commit)
 - Build warnings, and a list of images and audio files the site doesn't use
-- Optional: move the front page styles into their own file; run the build automatically on GitHub; a Typora theme that looks like the site
+- Optional: run the build automatically on GitHub; a Typora theme that looks like the site
 
 ## Decisions
 
@@ -44,7 +40,7 @@ The idea: all text and the list of drawings live in Markdown files written in Ty
 - **Drawing sizes:** three drawings in a section are shown large, two are shown huge. Any other number: large, plus a warning, because the mobile layout only handles two or three.
 - **No intro text** on the front page for now.
 - **The script is written from scratch**; the earlier draft wasn't found.
-- **Styling stays split** between the front page and the story pages. They look different, so this is fine.
+- **Styling stays split** between the front page and the story pages. They look different, so this is fine. Front page: gallery.css and gallery.js. Story pages: style.css and audio.js.
 - **Safety:** the script stops without changing anything if an image, audio file or story is missing or misspelled.
 
 ## Good to know
