@@ -2,9 +2,9 @@
 
 *Kokeilu nettisivusta* — a portfolio by Lauri Prudant.
 
-Link: https://laurilaurilauri.github.io/matkalla/
+Link: https://laurilaurilauri.github.io/uudella-matkalla/
 
-**Matkalla** ("On the way") is a small, hand-built online gallery of my drawings. This is the second version of the gallery.
+**Matkalla** is a small, hand-built online gallery of my drawings. This is the second version of the gallery.
 
 ---
 

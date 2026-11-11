@@ -13,13 +13,14 @@ Background and ground rules are in CLAUDE.md. Lauri makes all commits himself.
 
 The idea: all text and the list of drawings live in Markdown files written in Typora. A small Python script turns them into the same web pages the site has now. The Markdown files contain only content; how things look is decided by the CSS and the page template.
 
-**Note:** the site still runs on the old hand-made HTML. The build has only been run as a dry run, so editing the Markdown files has no effect yet. That changes with commit 2.
+**Note:** from commit 2 on, the pages are generated. Edit the Markdown files in content, then run the build; don't edit the story pages or the gallery part of index.html by hand.
 
 **Commit 2 – regenerate the pages**
 
-- [ ] Run the build script, which rewrites the gallery part of index.html and the four story pages
-- [ ] Remove the old stories/template.html (replaced by the new template)
-- [ ] Check that nothing changed except spacing, and click through the site locally
+- [x] Run the build script, which rewrites the gallery part of index.html and the four story pages
+- [x] Remove the old stories/template.html (replaced by the new template)
+- [x] Check that nothing changed except spacing (a second build reports "Everything is up to date")
+- [ ] Click through the site locally (Lauri)
 
 **Commit 3 – instructions**
 
