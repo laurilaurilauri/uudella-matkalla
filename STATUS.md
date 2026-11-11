@@ -24,7 +24,7 @@ The idea: all text and the list of drawings live in Markdown files written in Ty
 **Commit 3 – instructions**
 
 - [x] README.md rewritten for the new structure (done early, together with commit 1)
-- [ ] Update the structure description in CLAUDE.md
+- [x] Update the structure description in CLAUDE.md (done early: removed the outdated file tree and step plan, which STATUS.md now covers)
 - [ ] Decide whether the README links should point to this repo instead of the original one
 
 ## Later
