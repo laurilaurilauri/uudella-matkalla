@@ -29,6 +29,10 @@ The idea: all text and the list of drawings live in Markdown files written in Ty
 - Change the page language setting from English to Finnish (own small commit)
 - Build warnings, and a list of images and audio files the site doesn't use
 - Optional: run the build automatically on GitHub; a Typora theme that looks like the site
+- Make adding images easier:
+  - Get rid of the .JPEG file type and replace with .jpg
+  - use hyphens in naming (`image-example`) instead of (`image_example`)
+  - get rid of all ä & ö in the names
 - When build.py functionality has been verified, an image compression tool:
   - When `build.py` runs, it first checks the `originals/` folder, where the full-size JPEGs straight from the camera or scanner are kept. This folder is ignored by Git, so these large files never go to GitHub. For each original, the script checks whether `images/` already has a web version with the same file name that is newer than the original. If one is missing or out of date, it uses macOS’s built-in `sips` tool to make a smaller copy, at most 1600 px on the long side and saved as a moderately compressed JPEG (about 150–300 KB), and saves it in `images/`. The original is never changed. 
   - Images that are already up to date are skipped, so repeat builds are fast, and replacing an original with an edited version automatically updates its web copy on the next build. `gallery.md` and the story files always refer to the web versions in `images/`, and the site only ever uses those. Adding a new drawing therefore means putting the original in `originals/`, writing its line in Markdown, and running `python3 build.py`.
