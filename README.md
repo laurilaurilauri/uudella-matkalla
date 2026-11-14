@@ -54,9 +54,9 @@ The look comes from `gallery.css` (front page), `style.css` (story pages) and `t
 
 ## Adding a section and a story
 
-The following example shows how a new section with three drawings is added, with a story linked to one of them. The section is called made up section is called *Talvi* and the story is *Jäätynyt järvi*.
+The following example shows how a new section with three drawings is added, with a story linked to one of them. The made-up section is called *Talvi* and the story is *Jäätynyt järvi*.
 
-**1. Add the files.** The photos go into `images/` and the soundscape into `audio/`:
+**1. Add the files.** The photos go into `images/` and the soundscape, if the story has one, into `audio/`:
 
 ```
 images/lumiukko.JPEG
@@ -214,22 +214,24 @@ Artworks are grouped into themed sections. Each section has a heading (`.text-br
 
 ## Story pages — `stories/*.html`
 
-All story pages are generated from `templates/story.html`, so they share the same structure. They load `../style.css` and `../audio.js`. The title, drawing, soundscape and text of each story are in its file in `content/stories/`.
+All story pages are generated from `templates/story.html`, so they share the same structure. They load `../style.css` and `../audio.js`. The title, drawing, soundscape (optional) and text of each story are in its file in `content/stories/`.
 
 ```
 ← TAKAISIN TAIDEGALLERIAAN        (back link)
 ┌───────────────┐   Title
-│               │   [ Uppoudu äänimaailmaan ]   (music button)
+│               │   [ Uppoudu äänimaailmaan ]   (music button, only with audio)
 │    artwork    │   Story text…
 │  + .ripple    │
-└───────────────┘   Äänimaailma by me
+└───────────────┘   Äänimaailma by me            (only with audio)
 ```
 
 On desktop, the image (600 px) and the text sit side by side, with the whole layout at most 1000 px wide. On mobile they stack, and the music button spans the full width.
 
 ### Audio feature — `audio.js`
 
-Each story page with a soundscape has a music button that starts and stops looped playback of the page's mp3 file (`<audio id="background-music" loop>`). Stories without audio have no button. In `templates/story.html` the button, player and credit line sit between `<!-- AUDIO:START -->` and `<!-- AUDIO:END -->`, and the build leaves those parts out when a story has no audio. It works in any modern browser with HTML5 audio support.
+Each story page with a soundscape has a music button that starts and stops looped playback of the page's mp3 file (`<audio id="background-music" loop>`). It works in any modern browser with HTML5 audio support.
+
+Stories without audio have no button. In `templates/story.html` the button, player and credit line sit between `<!-- AUDIO:START -->` and `<!-- AUDIO:END -->` lines, and the build leaves those parts out when a story has no audio.
 
 - The button label switches between **"Uppoudu äänimaailmaan"** ("Immerse yourself in the soundscape") and **"Keskeytä kokemus"** ("Pause the experience").
 - The script only runs when both the `#background-music` and `#music-toggle` elements exist on the page.

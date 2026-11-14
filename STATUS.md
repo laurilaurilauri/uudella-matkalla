@@ -7,28 +7,11 @@ Background and ground rules are in CLAUDE.md. Lauri makes all commits himself.
 
 ## Last completed
 
-- ~~Audio is now optional in stories. Without an "audio:" line, the story page has no music button and no "Äänimaailma by me" line. A named audio file that doesn't exist still stops the build. Tested with Pääsky ja pelikaani.~~
+- Audio is now optional in stories. Without an "audio:" line, the story page has no music button and no "Äänimaailma by me" line. A named audio file that doesn't exist still stops the build. Tested with Pääsky ja pelikaani.
+- Also tested that build.py works as intented &rightarrow; works great.
 
-## Next: write content in Markdown, generate the HTML
+## Next actions: 
 
-The idea: all text and the list of drawings live in Markdown files written in Typora. A small Python script turns them into the same web pages the site has now. The Markdown files contain only content; how things look is decided by the CSS and the page template.
-
-**Note:** the pages are now generated. Edit the Markdown files in content, then run the build; don't edit the story pages or the gallery part of index.html by hand.
-
-**Next commit – instructions**
-
-- [x] README.md rewritten for the new structure (done early, together with commit 1)
-- [x] Update the structure description in CLAUDE.md (done early: removed the outdated file tree and step plan, which STATUS.md now covers)
-- [x] README links point to this repo and its new address (decided: they'll work once the site is live)
-- [x] README describes gallery.css and gallery.js
-
-## Later
-
-- Publish this repo on GitHub Pages (switched on; the first try failed because of a GitHub outage – check that https://laurilaurilauri.github.io/uudella-matkalla/ works)
-- Write a first new story to try out the workflow
-- Change the page language setting from English to Finnish (own small commit)
-- Build warnings, and a list of images and audio files the site doesn't use
-- Optional: run the build automatically on GitHub; a Typora theme that looks like the site
 - Make adding images easier:
   - Get rid of the .JPEG file type and replace with .jpg
   - use hyphens in naming (`image-example`) instead of (`image_example`)
@@ -36,6 +19,16 @@ The idea: all text and the list of drawings live in Markdown files written in Ty
 - When build.py functionality has been verified, an image compression tool:
   - When `build.py` runs, it first checks the `originals/` folder, where the full-size JPEGs straight from the camera or scanner are kept. This folder is ignored by Git, so these large files never go to GitHub. For each original, the script checks whether `images/` already has a web version with the same file name that is newer than the original. If one is missing or out of date, it uses macOS’s built-in `sips` tool to make a smaller copy, at most 1600 px on the long side and saved as a moderately compressed JPEG (about 150–300 KB), and saves it in `images/`. The original is never changed. 
   - Images that are already up to date are skipped, so repeat builds are fast, and replacing an original with an edited version automatically updates its web copy on the next build. `gallery.md` and the story files always refer to the web versions in `images/`, and the site only ever uses those. Adding a new drawing therefore means putting the original in `originals/`, writing its line in Markdown, and running `python3 build.py`.
+  - To make sure that workflow is compatible with ios, check whether to use `sips` or some other simple image compression method.
+
+## Later
+
+**Optional**:
+
+- Change the page language setting from English to Finnish (own small commit)
+- Build warnings, and a list of images and audio files the site doesn't use
+- Run the build automatically on GitHub
+- a Typora theme that looks like the site
 
 ## Decisions
 
