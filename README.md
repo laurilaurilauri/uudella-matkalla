@@ -173,6 +173,7 @@ Second paragraph, with *italic* and **bold**.
 ```
 
 - `title` is used for the page heading and the browser tab.
+- `audio` is optional. Leave the line out (or empty) for a story without a soundscape: its page then has no music button and no "Äänimaailma by me" line. If a file is named, it must exist, or the build stops.
 - The image line right below the top block is the story's drawing.
 - A blank line starts a new paragraph. Supported formatting: `*italic*` and `**bold**`. More (subheadings, lists, links) can be added when needed, together with matching styles.
 
@@ -228,7 +229,7 @@ On desktop, the image (600 px) and the text sit side by side, with the whole lay
 
 ### Audio feature — `audio.js`
 
-Each story page has a music button that starts and stops looped playback of the page's mp3 file (`<audio id="background-music" loop>`). It works in any modern browser with HTML5 audio support.
+Each story page with a soundscape has a music button that starts and stops looped playback of the page's mp3 file (`<audio id="background-music" loop>`). Stories without audio have no button. In `templates/story.html` the button, player and credit line sit between `<!-- AUDIO:START -->` and `<!-- AUDIO:END -->`, and the build leaves those parts out when a story has no audio. It works in any modern browser with HTML5 audio support.
 
 - The button label switches between **"Uppoudu äänimaailmaan"** ("Immerse yourself in the soundscape") and **"Keskeytä kokemus"** ("Pause the experience").
 - The script only runs when both the `#background-music` and `#music-toggle` elements exist on the page.

@@ -1,6 +1,5 @@
 ---
 title: Pääsky ja pelikaani
-audio: ../../audio/heavenly_loop_bandlab.mp3
 ---
 
 ![Pääsky ja pelikaani](../../images/paasky_ja_pelikaani.JPEG)

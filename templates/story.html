@@ -17,14 +17,18 @@
         </div>
         <div class="story-text">
             <h1>{{title}}</h1>
+            <!-- AUDIO:START -->
             <button id="music-toggle">Uppoudu äänimaailmaan</button>
             <audio id="background-music" loop>
                 <source src="{{audio}}" type="audio/mpeg">
                 Your browser does not support audio.
             </audio>
+            <!-- AUDIO:END -->
             <p>{{body}}
             </p>
+            <!-- AUDIO:START -->
             <div class="music-credit">Äänimaailma by me</div>
+            <!-- AUDIO:END -->
         </div>
     </div>
     <script src="../audio.js"></script>

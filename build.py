@@ -13,7 +13,8 @@ What it does:
          written: same spelling, same capital letters, and ä/ö stored the
          normal way (otherwise it may work on a Mac but break on GitHub)
        - a required setting in the top block is missing or misspelled
-         (e.g. a story without "title:" or "audio:")
+         (e.g. a story without "title:"; "audio:" is optional, and a story
+         without it gets a page with no music button)
        - a line doesn't follow the format (in gallery.md only "## Section"
          and image lines; in stories no headings, lists, links or HTML yet)
      It then lists every problem with file and line number, and writes NOTHING.
@@ -211,10 +212,14 @@ def format_paragraph(md_file, line_no, text):
 
 # --- Building a story page -------------------------------------------------
 
+# A block in the story template that is only used when the story has audio.
+AUDIO_BLOCK = re.compile(r"^[ \t]*<!-- AUDIO:START -->\n(.*?)^[ \t]*<!-- AUDIO:END -->\n",
+                         re.MULTILINE | re.DOTALL)
+
 def build_story(md_file, template):
     """Return (output_path, html) for one content/stories/<name>.md file."""
     output = STORIES_HTML / (md_file.stem + ".html")
-    settings, body = split_front_matter(md_file, ["title", "audio"], ["title", "audio"])
+    settings, body = split_front_matter(md_file, ["title", "audio"], ["title"])
 
     image = alt = None
     paragraphs = []        # list of (first_line_number, [lines])
@@ -244,7 +249,10 @@ def build_story(md_file, template):
     if not paragraphs:
         warn(md_file, None, "the story has no text")
 
-    audio = find_file(md_file, None, settings["audio"], "audio") if settings.get("audio") else None
+    # Audio is optional. No "audio:" line, or an empty one, means no soundscape.
+    # If a file is named, it must exist (checked like images).
+    has_audio = bool(settings.get("audio"))
+    audio = find_file(md_file, None, settings["audio"], "audio") if has_audio else None
 
     # Lines inside one paragraph are joined with a space. Paragraphs are
     # separated with <br> <br>, the same way as in the original pages.
@@ -252,14 +260,19 @@ def build_story(md_file, template):
         format_paragraph(md_file, first_line, " ".join(lines)) for first_line, lines in paragraphs
     )
 
-    if not (image and audio and settings.get("title")):
+    if not (image and settings.get("title")) or (has_audio and not audio):
         return output, None                  # errors already recorded
+
+    # The parts of the template between <!-- AUDIO:START --> and
+    # <!-- AUDIO:END --> (music button, player, credit line) are kept only
+    # when the story has audio. The marker lines themselves are always removed.
+    template = AUDIO_BLOCK.sub(lambda m: m.group(1) if audio else "", template)
 
     values = {
         "title": html.escape(settings["title"]),
         "image": link_from(output, image),
         "alt": html.escape(alt),
-        "audio": link_from(output, audio),
+        "audio": link_from(output, audio) if audio else "",
         "body": body_html,
     }
     page = re.sub(r"\{\{(\w+)\}\}", lambda m: values.get(m.group(1), m.group(0)), template)

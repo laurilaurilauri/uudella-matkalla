@@ -3,11 +3,11 @@
 Where the site restructuring stands, so work can continue in a later session.
 Background and ground rules are in CLAUDE.md. Lauri makes all commits himself.
 
-*Last updated: 11 November 2026*
+*Last updated: 14 November 2026*
 
 ## Last completed
 
-- ~~Front page styles and script moved out of index.html into their own files, gallery.css and gallery.js, like the story pages already use style.css and audio.js. index.html now holds only the page structure and the generated gallery. Looks and works exactly as before.~~
+- ~~Audio is now optional in stories. Without an "audio:" line, the story page has no music button and no "Äänimaailma by me" line. A named audio file that doesn't exist still stops the build. Tested with Pääsky ja pelikaani.~~
 
 ## Next: write content in Markdown, generate the HTML
 
@@ -49,6 +49,7 @@ The idea: all text and the list of drawings live in Markdown files written in Ty
 - **The script is written from scratch**; the earlier draft wasn't found.
 - **Styling stays split** between the front page and the story pages. They look different, so this is fine. Front page: gallery.css and gallery.js. Story pages: style.css and audio.js.
 - **Safety:** the script stops without changing anything if an image, audio file or story is missing or misspelled.
+- **Audio is optional.** Not every drawing has a soundscape. A story without one leaves out the music button and the credit line instead of showing a button that does nothing.
 
 ## Good to know
 
