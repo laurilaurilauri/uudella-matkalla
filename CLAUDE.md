@@ -27,6 +27,7 @@ Make adding work easy enough that the site actually gets updated: write content 
 
 - `python3 build.py --dry-run` shows a diff without writing. The build stops without writing anything if an image/audio/story file is missing or misspelled (case- and ä/ö-safe check).
 - stories/*.html and the gallery block in index.html (between the GALLERY:START / GALLERY:END markers) are generated output: edit content/ and templates/, never the generated HTML by hand. Story URLs must not change.
+- Images: full-size originals go in originals/ (git-ignored, backed up in iCloud). `python3 shrink.py` (macOS sips) makes the web copies in images/: longer side over 2400 px → shrunk to 2400 px, JPEG quality 85; 2400 px or less → copied unchanged (re-saving makes them bigger). Kept separate from build.py so build.py stays short and only shrink.py needs changing on Windows.
 - Audio is optional: a story without `audio:` (or with it empty) gets no music button, player or credit line (template parts between AUDIO:START / AUDIO:END are dropped). A named audio file that doesn't exist is still an error.
 - Gallery size rule: 3 works → `large`, 2 → `huge`. The mobile CSS (≤ 768 px) only handles sections with exactly 2 or 3 works.
 

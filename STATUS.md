@@ -7,17 +7,10 @@ Background and ground rules are in CLAUDE.md. Lauri makes all commits himself.
 
 ## Last completed
 
-- Audio names cleaned up the same way as the images: hyphens instead of underscores (e.g. garageband1-faded.mp3). The story files and README.md were updated to match.
-- Still to do by Lauri: run `python3 build.py`, check that the music plays on the story pages, and commit.
+- Image compression tool: shrink.py makes the web-size images from the full-size ones in the new originals folder (which git ignores). Images over 2400 px are shrunk to 2400 px (JPEG quality 85); smaller ones are copied unchanged. The current images were moved to originals and the web copies made: the front page went from 20 MB to 10.9 MB, all images from 43.5 MB to 23 MB. README.md explains how to use it.
+- Still to do by Lauri: check the site in the browser (images look sharp enough, nothing missing), then commit. build.py doesn't need to be run: the image names didn't change.
 
 ## Next actions: 
-
-- build.py warns when a new image name doesn't follow the rule and suggests a correct one (e.g. Uusi_Kuva.JPEG → uusi-kuva.jpg). Only a warning: the build still runs.
-
-- When build.py functionality has been verified, an image compression tool:
-  - When `build.py` runs, it first checks the `originals/` folder, where the full-size JPEGs straight from the camera or scanner are kept. This folder is ignored by Git, so these large files never go to GitHub. For each original, the script checks whether `images/` already has a web version with the same file name that is newer than the original. If one is missing or out of date, it uses macOS’s built-in `sips` tool to make a smaller copy, at most 1600 px on the long side and saved as a moderately compressed JPEG (about 150–300 KB), and saves it in `images/`. The original is never changed. 
-  - Images that are already up to date are skipped, so repeat builds are fast, and replacing an original with an edited version automatically updates its web copy on the next build. `gallery.md` and the story files always refer to the web versions in `images/`, and the site only ever uses those. Adding a new drawing therefore means putting the original in `originals/`, writing its line in Markdown, and running `python3 build.py`.
-  - To make sure that workflow is compatible with ios, check whether to use `sips` or some other simple image compression method.
 
 -  Visual tweaks:
 
@@ -38,6 +31,10 @@ Background and ground rules are in CLAUDE.md. Lauri makes all commits himself.
 ## Decisions
 
 - **Image and audio names without ä/ö, underscores or .JPEG.** The letters ä and ö can be stored in two different ways inside a file name, which caused mix-ups. Simple names are easier to type and work the same everywhere.
+- **Image compression in its own script (shrink.py), not in build.py.** build.py stays short, and if the site is ever updated on Windows, only shrink.py needs changing. It only needs running after adding or changing an original.
+- **Web images: max 2400 px, JPEG quality 85.** Tested 1600, 2000 and 2400 px; chose the sharpest, as it still roughly halves the size. Images of 2400 px or less are copied unchanged, because saving them again made 15 of 16 bigger.
+- **Originals in the project's originals folder**, not read straight from iCloud: simpler, and works the same on Windows. Backed up in iCloud.
+- **No naming check in build.py.** Considered a warning for badly named files, but left out: it's not essential, and checking names by eye is easy. build.py stays shorter.
 - **Markdown and a small Python script.** Jekyll was considered, but it brings its own folder rules and template language, and the site would be harder to understand.
 - **Front page file:** the top block holds the site title and copyright line. Each "##" heading is a gallery section; each image line is a drawing. A heading with no images is shown on its own (like "Coming soon...").
 - **Story links** in the front page file point to the story's Markdown file, so they can be clicked in Typora. The script turns them into links to the web pages.
