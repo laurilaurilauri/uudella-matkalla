@@ -30,6 +30,7 @@ Background and ground rules are in CLAUDE.md. Lauri makes all commits himself.
 - Build warnings, and a list of images and audio files the site doesn't use
 - Run the build automatically on GitHub
 - a Typora theme that looks like the site
+- A simple menu in the top bar (plain text links), once there are pages to link to, e.g. an About page ("Tietoa") or a list of stories.
 
 ## Decisions
 

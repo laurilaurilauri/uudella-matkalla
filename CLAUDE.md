@@ -34,4 +34,3 @@ Make adding work easy enough that the site actually gets updated: write content 
 ## Open decisions
 
 - Should story pages keep `lang="en"` or change to `fi`?
-- Enable GitHub Pages for this repo (needs a public repo on a free account) once there is progress.
