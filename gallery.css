@@ -13,6 +13,13 @@ header {
     margin-bottom: 80px;
 }
 
+/* the text under the title: matches the section headings (Light, no italics) */
+header p {
+    font-weight: 300;
+    font-size: 1.1rem;      /* a little larger than the normal 1rem */
+}
+header p em { font-style: normal; }
+
 h1 {
     font-size: 3rem;
     letter-spacing: -2px;
@@ -72,11 +79,12 @@ h1 {
     padding-top: 60px;
     padding-bottom: 80px;
     font-size: 1.5rem;
-    font-weight: bold;
+    font-weight: 300;       /* Light */
     text-align: center;
-    border-top: 2px solid #505050;
+    border-top: 1px solid #999999;   /* divider line above each section (was #505050) */
     margin-top: 100px;
 }
+.text-break em { font-style: normal; }   /* section headings without italics */
 /* 6. ANIMATION */
 @keyframes fadeIn {
     from { opacity: 0; }

@@ -7,18 +7,20 @@ Background and ground rules are in CLAUDE.md. Lauri makes all commits himself.
 
 ## Last completed
 
-- README.md shortened from 310 to about 200 lines. "Adding drawings and a story" now comes right after the intro and has everything needed to add work, so it can be used as a checklist. Repeated examples and commands were removed, and the technical page details were cut to one line per feature.
+- Section headings on the front page and the line under the title (© LAURI PRUDANT 2026) are now Light (weight 300) and not italic, instead of italic (headings also bold). 200 was too faint. The line under the title is also a little larger (1.1 × normal size). Story titles are less bold: Medium (500) instead of Bold (700). The divider lines between sections are a lighter grey (#999999 instead of #505050). Changed: gallery.css and style.css.
 
-## Next actions: 
+## Next actions
 
--  Visual tweaks:
+**Visual update** (one longer design session, top bar + bottom bar + colours + font together, so they match). Sketches: ulkoasukokeilu.pdf in OneDrive (Random omia juttuja → nettisivuun liittyvää).
 
-  - A top bar that follows as the visitor scrolls down displaying "Matkalla"?
-
-    - inspired from [Kansallisgalleria](https://kokoelma.kansallisgalleria.fi/en/) 
--  A bottom bar that shows some information and uses an accent color, should match the top bar and if possible also a horizontal and wide drawing which gives distinct and professional feeling to the website
--  Applying a new color scheme to the website
-
+- **Top bar** that stays visible when scrolling, showing "Matkalla". Inspired by [Kansallisgalleria](https://kokoelma.kansallisgalleria.fi/en/).
+- **Bottom bar** with some information, in an accent colour that matches the top bar. If possible with a wide, horizontal drawing, for a distinct and professional feel.
+- **Colour scheme:** favourite is hilda06 from [Chromotome](https://kgolid.github.io/chromotome-site/):
+  - background #f6ecd4 (cream), text #0e0603 (near-black)
+  - colours #f75952 (red), #ffce84 (yellow), #74b7b2 (teal), #f6f6f6 (off-white), #b17d71 (brown)
+  - Idea from the sketches: drawings on white "cards" on the cream background, each with a coloured strip (below, above, or both), colours taking turns.
+- **Font:** not decided yet. Compare a few options side by side.
+- **How:** first a separate test page with 2–3 versions, checked on desktop and phone. Only the chosen version goes into the site. Story pages get the same colours and font.
 
 ## Later
 

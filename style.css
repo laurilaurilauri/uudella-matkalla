@@ -8,6 +8,7 @@
         .story-image { width: 600px; flex-shrink: 0; }
         .story-image img { width: 100%; border: 1px solid #fcf9f9; }
         .story-text { flex: 1; line-height: 1.6; margin-top: 80px; /* Adjust this value to set text height */ }
+        .story-text h1 { font-weight: 500; } /* story title: Medium, less bold than the default 700 */
         
         .music-credit {
             margin-top: 30px;
