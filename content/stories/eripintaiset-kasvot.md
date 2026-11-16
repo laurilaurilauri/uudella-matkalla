@@ -1,6 +1,6 @@
 ---
 title: Kasvoja kadulla ja seinillä
-audio: ../../audio/bandlab_uniset_rummut_muokattu.mp3
+audio: ../../audio/bandlab-uniset-rummut-muokattu.mp3
 ---
 
 ![Eripintaiset naamat](../../images/eripintaiset-naamat-leikattu.jpg)

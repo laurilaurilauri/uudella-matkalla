@@ -1,6 +1,6 @@
 ---
 title: Vaikea valinta
-audio: ../../audio/heavenly_loop_bandlab.mp3
+audio: ../../audio/heavenly-loop-bandlab.mp3
 ---
 
 ![Cordoban ilmapallo](../../images/cordoban-ilmapallo-leikattu.jpg)

@@ -1,6 +1,6 @@
 ---
 title: Tuulenpuuska
-audio: ../../audio/garageband1_faded.mp3
+audio: ../../audio/garageband1-faded.mp3
 ---
 
 ![Tuulenpuuska](../../images/tuulenpuuska.jpg)

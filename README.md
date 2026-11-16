@@ -255,9 +255,9 @@ The plan is to develop this animation further later, possibly with ways for the 
 ## Assets
 
 - **`images/`**: photos of the artworks. Files ending in `-leikattu` ("cropped") are the cropped versions used on the site. The folder also has artworks that are not on the site yet, plus earlier versions of some images.
-- **`audio/`**: original soundscapes, mostly made in **BandLab**, and since *Tuulenpuuska* also in **GarageBand**. The folder also keeps earlier drafts and mixes (`_kesken` = unfinished, `_faded`, `_mastered`, `_volumedown`, …).
+- **`audio/`**: original soundscapes, mostly made in **BandLab**, and since *Tuulenpuuska* also in **GarageBand**. The folder also keeps earlier drafts and mixes (`-kesken` = unfinished, `-faded`, `-mastered`, `-volumedown`, …).
 
-Image names contain no Finnish letters (ä, ö), so they are written the same way on every computer. The build checks that the names in the Markdown files match the files exactly.
+Image and audio names contain no Finnish letters (ä, ö), so they are written the same way on every computer. The build checks that the names in the Markdown files match the files exactly.
 
 ---
 

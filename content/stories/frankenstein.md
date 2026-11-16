@@ -1,6 +1,6 @@
 ---
 title: Frankenstein
-audio: ../../audio/bandlab_eka_puhtaampi.mp3
+audio: ../../audio/bandlab-eka-puhtaampi.mp3
 ---
 
 ![Frankenstein](../../images/frankenstein-leikattu.jpg)

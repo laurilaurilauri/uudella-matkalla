@@ -7,12 +7,11 @@ Background and ground rules are in CLAUDE.md. Lauri makes all commits himself.
 
 ## Last completed
 
-- Image names cleaned up: all 52 images are now lowercase, with hyphens instead of underscores, no ä/ö, and end in .jpg (e.g. myrsky-merella-tilava.jpg). The links in content/ and the examples in README.md were updated to match.
-- Still to do by Lauri: run `python3 build.py --dry-run`, then `python3 build.py`, check the site in the browser, and commit. Until the build is run, index.html and the story pages still point to the old names, so the images don't show.
+- Audio names cleaned up the same way as the images: hyphens instead of underscores (e.g. garageband1-faded.mp3). The story files and README.md were updated to match.
+- Still to do by Lauri: run `python3 build.py`, check that the music plays on the story pages, and commit.
 
 ## Next actions: 
 
-- Rename the audio files the same way (hyphens instead of underscores), and update the story files that use them.
 - build.py warns when a new image name doesn't follow the rule and suggests a correct one (e.g. Uusi_Kuva.JPEG → uusi-kuva.jpg). Only a warning: the build still runs.
 
 - When build.py functionality has been verified, an image compression tool:
@@ -38,7 +37,7 @@ Background and ground rules are in CLAUDE.md. Lauri makes all commits himself.
 
 ## Decisions
 
-- **Image names without ä/ö, underscores or .JPEG.** The letters ä and ö can be stored in two different ways inside a file name, which caused mix-ups. Simple names are easier to type and work the same everywhere.
+- **Image and audio names without ä/ö, underscores or .JPEG.** The letters ä and ö can be stored in two different ways inside a file name, which caused mix-ups. Simple names are easier to type and work the same everywhere.
 - **Markdown and a small Python script.** Jekyll was considered, but it brings its own folder rules and template language, and the site would be harder to understand.
 - **Front page file:** the top block holds the site title and copyright line. Each "##" heading is a gallery section; each image line is a drawing. A heading with no images is shown on its own (like "Coming soon...").
 - **Story links** in the front page file point to the story's Markdown file, so they can be clicked in Typora. The script turns them into links to the web pages.
@@ -55,5 +54,5 @@ Background and ground rules are in CLAUDE.md. Lauri makes all commits himself.
 
 - **README.md** has a step-by-step example of adding a new section and a story.
 
-- **Image names:** lowercase, hyphens between words, no ä/ö, ending in .jpg. Example: *Jäätynyt järvi* → jaatynyt-jarvi.jpg. Capital letters matter online.
+- **Image and audio names:** lowercase, hyphens between words, no ä/ö, ending in .jpg or .mp3. Example: *Jäätynyt järvi* → jaatynyt-jarvi.jpg. Capital letters matter online.
 - **Typora theme "Matkalla":** shows images at half size while writing. It's based on Typora's default GitHub theme, so it's easy to tell apart from the theme used for other documents. Choose it from the Themes menu when working on the site. The file is matkalla.css in Typora's themes folder (Typora → Preferences → Appearance → Open Theme Folder). It's outside the project, so git doesn't track it. It didn't seem to work on the first try; still to be checked (first step: fully quit Typora with Cmd+Q and reopen).
