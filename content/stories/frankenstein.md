@@ -3,7 +3,7 @@ title: Frankenstein
 audio: ../../audio/bandlab_eka_puhtaampi.mp3
 ---
 
-![Frankenstein](../../images/frankenstein_leikattu.JPEG)
+![Frankenstein](../../images/frankenstein-leikattu.jpg)
 
 Vierailu näyttelyyn, joka kertoi brasilialaista 60-luvun pop-taiteesta, oli antoisa. Siellä näin yhä yksinkertaisempia tapoja esittää kasvoja ilmeikkäästi.
 

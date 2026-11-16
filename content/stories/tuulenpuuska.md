@@ -3,7 +3,7 @@ title: Tuulenpuuska
 audio: ../../audio/garageband1_faded.mp3
 ---
 
-![Tuulenpuuska](../../images/tuulenpuuska.JPEG)
+![Tuulenpuuska](../../images/tuulenpuuska.jpg)
 
 Paluu Suomeen oli kuin ankara tuulenpuuska, joka ei päästänyt otteestaan.
 

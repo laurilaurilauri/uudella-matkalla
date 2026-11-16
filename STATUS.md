@@ -3,23 +3,29 @@
 Where the site restructuring stands, so work can continue in a later session.
 Background and ground rules are in CLAUDE.md. Lauri makes all commits himself.
 
-*Last updated: 14 November 2026*
+*Last updated: 16 November 2026*
 
 ## Last completed
 
-- Audio is now optional in stories. Without an "audio:" line, the story page has no music button and no "Äänimaailma by me" line. A named audio file that doesn't exist still stops the build. Tested with Pääsky ja pelikaani.
-- Also tested that build.py works as intented &rightarrow; works great.
+- Image names cleaned up: all 52 images are now lowercase, with hyphens instead of underscores, no ä/ö, and end in .jpg (e.g. myrsky-merella-tilava.jpg). The links in content/ and the examples in README.md were updated to match.
+- Still to do by Lauri: run `python3 build.py --dry-run`, then `python3 build.py`, check the site in the browser, and commit. Until the build is run, index.html and the story pages still point to the old names, so the images don't show.
 
 ## Next actions: 
 
-- Make adding images easier:
-  - Get rid of the .JPEG file type and replace with .jpg
-  - use hyphens in naming (`image-example`) instead of (`image_example`)
-  - get rid of all ä & ö in the names
+- Rename the audio files the same way (hyphens instead of underscores), and update the story files that use them.
+- build.py warns when a new image name doesn't follow the rule and suggests a correct one (e.g. Uusi_Kuva.JPEG → uusi-kuva.jpg). Only a warning: the build still runs.
+
 - When build.py functionality has been verified, an image compression tool:
   - When `build.py` runs, it first checks the `originals/` folder, where the full-size JPEGs straight from the camera or scanner are kept. This folder is ignored by Git, so these large files never go to GitHub. For each original, the script checks whether `images/` already has a web version with the same file name that is newer than the original. If one is missing or out of date, it uses macOS’s built-in `sips` tool to make a smaller copy, at most 1600 px on the long side and saved as a moderately compressed JPEG (about 150–300 KB), and saves it in `images/`. The original is never changed. 
   - Images that are already up to date are skipped, so repeat builds are fast, and replacing an original with an edited version automatically updates its web copy on the next build. `gallery.md` and the story files always refer to the web versions in `images/`, and the site only ever uses those. Adding a new drawing therefore means putting the original in `originals/`, writing its line in Markdown, and running `python3 build.py`.
   - To make sure that workflow is compatible with ios, check whether to use `sips` or some other simple image compression method.
+
+-  Visual tweaks:
+
+  - A top bar that follows as the visitor scrolls down displaying "Matkalla"?
+
+    - inspired from [Kansallisgalleria](https://kokoelma.kansallisgalleria.fi/en/) 
+
 
 ## Later
 
@@ -32,6 +38,7 @@ Background and ground rules are in CLAUDE.md. Lauri makes all commits himself.
 
 ## Decisions
 
+- **Image names without ä/ö, underscores or .JPEG.** The letters ä and ö can be stored in two different ways inside a file name, which caused mix-ups. Simple names are easier to type and work the same everywhere.
 - **Markdown and a small Python script.** Jekyll was considered, but it brings its own folder rules and template language, and the site would be harder to understand.
 - **Front page file:** the top block holds the site title and copyright line. Each "##" heading is a gallery section; each image line is a drawing. A heading with no images is shown on its own (like "Coming soon...").
 - **Story links** in the front page file point to the story's Markdown file, so they can be clicked in Typora. The script turns them into links to the web pages.
@@ -48,5 +55,5 @@ Background and ground rules are in CLAUDE.md. Lauri makes all commits himself.
 
 - **README.md** has a step-by-step example of adding a new section and a story.
 
-- The letters ä and ö can be stored in two different ways inside a file name. A Mac treats both as the same name, and git on a Mac does too, so a git command can hit the wrong file. Check the result carefully when working with such file names.
+- **Image names:** lowercase, hyphens between words, no ä/ö, ending in .jpg. Example: *Jäätynyt järvi* → jaatynyt-jarvi.jpg. Capital letters matter online.
 - **Typora theme "Matkalla":** shows images at half size while writing. It's based on Typora's default GitHub theme, so it's easy to tell apart from the theme used for other documents. Choose it from the Themes menu when working on the site. The file is matkalla.css in Typora's themes folder (Typora → Preferences → Appearance → Open Theme Folder). It's outside the project, so git doesn't track it. It didn't seem to work on the first try; still to be checked (first step: fully quit Typora with Cmd+Q and reopen).

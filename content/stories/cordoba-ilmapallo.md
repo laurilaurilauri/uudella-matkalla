@@ -3,7 +3,7 @@ title: Vaikea valinta
 audio: ../../audio/heavenly_loop_bandlab.mp3
 ---
 
-![Cordoban ilmapallo](../../images/cordoban_ilmapallo_leikattu.JPEG)
+![Cordoban ilmapallo](../../images/cordoban-ilmapallo-leikattu.jpg)
 
 Argentiinassa teimme matkan Cordobaan. Kolmikon muodostivat German Uruguaysta, Nacho Meksikosta ja minä. Aasi tulee aina luettelossa viimeisenä, opetetaan Chilessä.
 

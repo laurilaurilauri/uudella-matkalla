@@ -5,54 +5,54 @@ subtitle: © LAURI PRUDANT 2026
 
 ## Levon ja tekemisen hetket
 
-![Myrsky merellä](../images/myrsky_merella_tilava.JPEG)
-![Vauhdikas lasku](../images/vauhdikas_lasku_tilava.JPEG)
-![Herran lepotauko](../images/herran_lepotauko_tilava.JPEG)
+![Myrsky merellä](../images/myrsky-merella-tilava.jpg)
+![Vauhdikas lasku](../images/vauhdikas-lasku-tilava.jpg)
+![Herran lepotauko](../images/herran-lepotauko-tilava.jpg)
 
 ## Juhlat
 
-![Pikkupuu](../images/pikkupuu.JPEG)
-![Valvomassa](../images/valvomassa_tilava.JPEG)
-[![Pääsky ja pelikaani](../images/paasky_ja_pelikaani.JPEG)](stories/paasky-ja-pelikaani.md)
+![Pikkupuu](../images/pikkupuu.jpg)
+![Valvomassa](../images/valvomassa-tilava.jpg)
+[![Pääsky ja pelikaani](../images/paasky-ja-pelikaani.jpg)](stories/paasky-ja-pelikaani.md)
 
 ## Uusia tuulia
 
-![Surullinen kuu](../images/surullinen_kuu.JPEG)
-[![Tuulenpuuska](../images/tuulenpuuska.JPEG)](stories/tuulenpuuska.md)
-![Lempeä horisontti](../images/lempea_horisontti.JPEG)
+![Surullinen kuu](../images/surullinen-kuu.jpg)
+[![Tuulenpuuska](../images/tuulenpuuska.jpg)](stories/tuulenpuuska.md)
+![Lempeä horisontti](../images/lempea-horisontti.jpg)
 
 ## Katseita
 
-[![Cordoban ilmapallo](../images/cordoban_ilmapallo_leikattu.JPEG)](stories/cordoba-ilmapallo.md)
-[![Eripintaiset naamat](../images/eripintaiset_naamat_leikattu.JPEG)](stories/eripintaiset-kasvot.md)
-[![Frankenstein](../images/frankenstein_leikattu.JPEG)](stories/frankenstein.md)
+[![Cordoban ilmapallo](../images/cordoban-ilmapallo-leikattu.jpg)](stories/cordoba-ilmapallo.md)
+[![Eripintaiset naamat](../images/eripintaiset-naamat-leikattu.jpg)](stories/eripintaiset-kasvot.md)
+[![Frankenstein](../images/frankenstein-leikattu.jpg)](stories/frankenstein.md)
 
 ## Kohtaamisia ja kukkia
 
-![Palapeli](../images/palapeli_leikattu.JPEG)
-![Hahmo ja lintu](../images/hahmo_ja_lintu_leikattu.JPEG)
-![Kukat vievät](../images/kukat_vievät_leikattu.JPEG)
+![Palapeli](../images/palapeli-leikattu.jpg)
+![Hahmo ja lintu](../images/hahmo-ja-lintu-leikattu.jpg)
+![Kukat vievät](../images/kukat-vievat-leikattu.jpg)
 
 ## Lennolla
 
-![Lentokoulu](../images/lentokoulu.JPEG)
-![Unimaailma](../images/unimaailma.JPEG)
+![Lentokoulu](../images/lentokoulu.jpg)
+![Unimaailma](../images/unimaailma.jpg)
 
 ## Ruokaketju
 
-![Ruokaketju](../images/ruokaketju.JPEG)
-![Juurikaupunki](../images/juurikaupunki.JPEG)
+![Ruokaketju](../images/ruokaketju.jpg)
+![Juurikaupunki](../images/juurikaupunki.jpg)
 
 ## Uusi kaupunki
 
-![Elefantit](../images/elefantit.JPEG)
-![Hautausmaa](../images/hautausmaa.JPEG)
-![Pelästynyt ihmisjoukossa](../images/pelästynyt_ihmisjoukossa.JPEG)
+![Elefantit](../images/elefantit.jpg)
+![Hautausmaa](../images/hautausmaa.jpg)
+![Pelästynyt ihmisjoukossa](../images/pelastynyt-ihmisjoukossa.jpg)
 
 ## Unessa
 
-![Kuninkaat](../images/kuninkaat.JPEG)
-![Elokaupunki](../images/elokaupunki.JPEG)
-![Nuotio](../images/nuotio.JPEG)
+![Kuninkaat](../images/kuninkaat.jpg)
+![Elokaupunki](../images/elokaupunki.jpg)
+![Nuotio](../images/nuotio.jpg)
 
 ## Coming soon...

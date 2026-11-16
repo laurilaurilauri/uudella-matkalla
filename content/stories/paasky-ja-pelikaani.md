@@ -2,7 +2,7 @@
 title: Pääsky ja pelikaani
 ---
 
-![Pääsky ja pelikaani](../../images/paasky_ja_pelikaani.JPEG)
+![Pääsky ja pelikaani](../../images/paasky-ja-pelikaani.jpg)
 
 Kirjoittelen tässä nyt testiksi, päivitän nettisivun toimintaperiaatetta. 
 

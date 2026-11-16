@@ -17,7 +17,7 @@ Lauri's hand-built online gallery of drawings, mostly from travels in South Amer
 - Lauri always makes the commits himself. Never run `git commit` or `git push`; prepare the changes and leave them for Lauri to review and commit.
 - Current progress, the plan and decisions are in STATUS.md. Read it at the start of a session and keep it updated as work progresses.
 - How to write STATUS.md: it is for Lauri to read first, so readability comes before completeness. Plain language, short sections, no clutter. Use inline `code` only when really necessary (e.g. a command to type); write file and folder names as plain text otherwise. Remove completed work, except the most recently completed step, which stays under "Last completed" (plain text, not struck through) so it's clear where things left off. Record decisions briefly with the reason.
-- File names contain ä/ö; links must match exactly. GitHub Pages is case-sensitive (`.JPEG` ≠ `.jpeg`), macOS is not.
+- Image names: lowercase, hyphens between words, no ä/ö, `.jpg` (e.g. `myrsky-merella-tilava.jpg`). Links must match exactly: GitHub Pages is case-sensitive (`.jpg` ≠ `.JPG`), macOS is not.
 
 ## Goal
 
